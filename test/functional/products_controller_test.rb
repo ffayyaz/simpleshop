@@ -40,6 +40,9 @@ class ProductsControllerTest < ActionController::TestCase
   test "should get edit" do
     get :edit, :id => @product.to_param
     assert_response :success
+		assert_select 'h1', 'Editing product'
+		assert_select '#columns #side a', :minimum => 4
+		#assert_select '#main .entry', 3
   end
 
   test "should update product" do
