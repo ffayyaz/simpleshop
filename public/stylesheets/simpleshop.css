@@ -158,3 +158,20 @@
   font-weight: bold;
   margin-right: 2em;
 }
+
+#store .entry form, #store .entry form div {
+	display: inline;
+}
+
+#store .cart_title {
+	font: 120% bold;
+}
+
+#store .item_price, #store .total_line {
+	text_align: right;
+}
+
+#store .total_line .total_cell {
+	font-weight: bold;
+	border-top: 1px solid #595;
+}
