@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <title>Pragprog Books Online Store</title>
@@ -15,10 +14,10 @@
   </div>
   <div id="columns">
     <div id="side">
-			<p>Current time:<br> <%= Time.now.strftime("%a %d %b %H:%M:%S") %></p>
-			<div id="cart">
+			<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
 				<%= render @cart %>
-			</div>
+			<% end %>
+			<p>Current time:<br> <%= Time.now.strftime("%a %d %b %H:%M:%S") %></p>
       <a href="http://www....">Home</a><br />
       <a href="http://www..../faq">Questions</a><br />
       <a href="http://www..../news">News</a><br />
