@@ -16,9 +16,11 @@
   <div id="columns">
     <div id="side">
 			<p>Current time:<br> <%= Time.now.strftime("%a %d %b %H:%M:%S") %></p>
-			<div id="cart">
-				<%= render @cart %>
-			</div>
+			<% if @cart %>
+				<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>
+					<%= render @cart %>
+				<% end %>
+			<% end %>
 
       <a href="http://www....">Home</a><br />
       <a href="http://www..../faq">Questions</a><br />
